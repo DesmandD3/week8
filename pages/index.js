@@ -5,8 +5,8 @@ import { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function Home() {
-  const apiKey = process.env.NEXT_PUBLIC_WEATHER_KEY;
-  const location = "Vancouver";
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const location = "vancouver";
   const units = "metric";
 
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=${units}&appid=${apiKey}`
@@ -109,9 +109,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (grabWeather.current === true) {
+    //if (grabWeather.current === true) {
       fetchWeater();
-    }
+    //}
     return () => {
       grabWeather.current = true;
     }
